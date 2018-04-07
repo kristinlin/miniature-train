@@ -1,0 +1,87 @@
+h1 {
+    text-align: center;
+    padding: 20px;
+    color: #E21A00;
+    font-family: "Abril Fatface", serif;
+    font-size: 70px;
+}
+
+h4 {
+    margin: 20px;
+    color: yellow;
+    background-color: darkblue;
+    font-family: "Abril Fatface", serif;
+    font-size: 40px;
+}
+
+h5 {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+}
+
+p {
+    padding: 15px;
+    font-size: 20px;
+    font-family: 
+}
+
+.hl {
+    color: white;
+    background-color: black;
+}
+
+.b {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.callout {
+    background-color: green;
+    color: white;
+}
+
+.quote {
+    font-family: "Permanent Marker", cursive;
+    font-size: 25px;
+    padding: 15px;
+}
+
+.code {
+    border:1px solid;
+    font-family: "IBM Plex Mono", monospace;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.sec {
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+img {
+    width: 100%;
+    border:1px solid;
+}
+
+.red {
+    color: red;
+    font-weight: bold;
+}
+
+.blue {
+    background-color: black;
+    color: white;
+}
+
+.yellow {
+    background-color: gold;
+    color: black;
+}
