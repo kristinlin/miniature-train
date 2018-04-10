@@ -2,8 +2,10 @@ h1 {
     text-align: center;
     padding: 20px;
     color: #E21A00;
-    font-family: "Abril Fatface", serif;
-    font-size: 70px;
+    font-family: "Bungee Inline", serif;
+    font-size: 100px;
+    text-transform: lowercase;
+    letter-spacing: 25px;
 }
 
 h4 {
@@ -26,6 +28,11 @@ p {
     font-family: 
 }
 
+li {
+    font-size: 20px;
+    padding: 5px;
+}
+
 .hl {
     color: white;
     background-color: black;
@@ -36,11 +43,31 @@ p {
     text-decoration: underline;
 }
 
+.i {
+    font-style: italic;
+    color: gray;
+    font-size: 16px;
+    padding: 12px;
+}
+
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 40%;
+}
+
+.table {
+    border: 3px inset red;
+    background-color: white;
+}
+
+.procon {
+    border-width: 5px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-color: red;
+    background-color: white;
 }
 
 .callout {

@@ -3,13 +3,18 @@
   <head>
     <title>Kristin's Webpack How-To</title>
     <!-- Latest compiled and minified CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|IBM+Plex+Mono|Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|IBM+Plex+Mono|Permanent+Marker|Bungee+Inline" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <div class="container">
       <h1>Webpack</h1>
+      <div class="i text-center">by Kristin Lin SoftDev pd08</div>
+      <br><br>
+
+
+<!--SECTION ONE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
       <div class="sec">
 	<h4>What is it?</h4>
 	<br>
@@ -20,44 +25,76 @@
 	    <p class="quote callout">"At it's core, webpack is a <span class="hl">static module bundler</span> for modern <span class="hl">Javascript</span> Applications"<br>-Webpack</p>
 	  </div>
 	  <div class="col-sm-6">
-	    <img src="dependencies.png">
+	    <img src="img/dependencies.png">
 	  </div>
 	</div>
-	<p>As your applications grow in size, it is more ideal to write modular Javascript code that may be <span class="b">separated into different files</span> and used as modules. However, this causes your html files to become very convoluted with different links that must be written in a precise order.</p>
+	<br><br>
+	<p>As your applications grow in size, it is more ideal to write modular Javascript code that may be <span class="b">separated into different files</span> and used as modules. However, this causes your HTML files to become very convoluted with different links that must be written in a precise order.</p>
 	<div class="row">
-	  <div class="col-sm-6">
-	    <p class="quote">If we were to draw the connections between all these separate files, it would create a <span class="hl">dependency graph</span>.</p>
+	  <div class="col-sm-3">
+	    <p class="quote text-right">If we were to draw the connections between all these separate files, it would create a <span class="red">dependency graph</span>.</p>
+	  </div>
+	  <div class="col-sm-9">
+	    <img src="img/graph.png" style="width: 95%">
 	  </div>
 	</div>
-	<p>Webpack allows you to reduce those links into just a few ones.</p>
+	<br><br>
+	<p>Webpack allows you to reduce those links into just a few ones, or maybe just one, by packaging all your separate static files together to create a new one called a bundle, which you can link to in your HTML file.</p>
+	<div class="row">
+	  <div class="col-sm-8 col-md-offset-2">
+	    <img src="img/reduced.PNG">
+	  </div>
+	</div>
+	<br><br>
       </div>
       <br><br>
+
+
+
+<!--SECTION TWO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->      
       <div class="sec">
 	<h4>The Four Core Concepts</h4>
 	<br>
 	<p>While only the entry and the output is necessary for a Webpack bundle, here are the four core concepts to creating one:</p>
 	<div class="row">
 	  <div class="col-sm-3">
-	    <h5>entry</h5>
-	    <p>Where your dependency graph starts. This is the file where you begin importing modules.</p>
+	    <div class="table">
+	      <h5>entry</h5>
+	      <p>Where your dependency graph starts. This is the file where you begin importing modules.</p>
+	    </div>
 	  </div>
 	  <div class="col-sm-3">
-	    <h5>output</h5>
-	    <p>This includes the path and the filename that you want Webpack to put your bundled JS file.</p>
+	    <div class="table">
+	      <h5>output</h5>
+	      <p>This includes the path and the filename that you want Webpack to put your bundled JS file.</p>
+	    </div>
 	  </div>
 	  <div class="col-sm-3">
-	    <h5>modules/loaders</h5>
-	    <p>Webpack needs modules and/or loaders when bundling non-JS files (ie. css).</p>
+	    <div class="table">
+	      <h5>modules/loaders</h5>
+	      <p>Webpack needs modules and/or loaders when bundling non-JS files (ie. css).</p>
+	    </div>
 	  </div>
 	  <div class="col-sm-3">
-	    <h5>plugins</h5>
-	    <p>There are tools you can use to modify the code in the bundle right before it is outputted.</p>
+	    <div class="table">
+	      <h5>plugins</h5>
+	      <p>There are tools you can use to modify the code in the bundle right before it is outputted.</p>
+	    </div>
 	  </div>
 	</div>
+	<br>
       </div>
-      <br>
+      <br><br>
+
+
+
+<!--SECTION THREE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->            
       <div class="sec">
 	<h4>An Example</h4>
+	<ol start="0">
+	  <br>	  <br>
+	  <li class="quote">SO WHAT DO WE HAVE HERE?</li>
+	  <p class="i">Want to get the full code to follow along or look more closely? Look no <a target="_blank" href="https://github.com/kristinlin/jubilant-lamp">further</a>.</p>
 	<p>We will assume you have installed all the necessary packages. Here is a small application, a previous svg assignment. The links and scripts are in the color <span class="red">red</span>.</p>
 
 <!-- ROW ONE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -65,16 +102,16 @@
 	<div class="row">
 	  <div class="col-sm-3 yellow code">
 curr_dir
- |
+ |--package.json
  |--dist
  |  `-- base.html
- |
  `--src
     |-- css
     |   `-- style.css
     `-- js
          |-- base.js
          `-- draw.js
+
 
 <h5>Directory</h5>
 	  </div>
@@ -97,9 +134,8 @@ curr_dir
 	<br>
 
 
-
 <!-- ROW ONE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-	<p>This application uses two JS files, one of which should be a module. DRAW.JS uses variables in BASE.JS.</p>
+	<p>This application uses two JS files in order to better modularize the code. As you can notice, DRAW.JS uses variables in BASE.JS. If we run this code, it won't work.</p>
 	<div class="row">
 	  <div class="col-sm-6 blue code">
 <span class="red">var svg</span> = document.getElementById("board");
@@ -156,18 +192,108 @@ var grow_n_shrink = function(e) {
 
 
 
-	
+<!-- ROW ONE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<br><br>	
+	  <li class="quote">DRAWING CONNECTIONS</li>
+	<p>To show Webpack the connections in our dependency graph, we should add 'import' and 'export' accordingly.</p>
+	<p>It would also be extremely convenient to include css into our bundle as well! This will save us from linking it later on in the html file, allowing us to just add the bundled JS file that Webpack will create.</p>
+	<div class="row">
+	<div class="col-sm-6 callout code">
+<span class="hl"><span class="red">export</span> var svg</span>= document.getElementById("board");
+<span class="hl"><span class="red">export</span> var stop</span> = document.getElementById("stop");
+<span class="hl"><span class="red">export</span> var gas</span> = document.getElementById("gas");
+<span class="hl"><span class="red">export</span> var dvd</span> = document.getElementById("dvd");
+<span class="hl"><span class="red">export</span> var h</span> = svg.getAttribute("height");
+<span class="hl"><span class="red">export</span> var w</span> = svg.getAttribute("width");
+
+//rand color
+var values = '0123456789ABCDEF';
+<span class="hl"><span class="red">export</span> var rand_color</span> = function() {
+    var color = '#';
+    for (var x = 0; x < 6; x++) {
+        color += values[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+
+			<h5>Base.js</h5>
+			</div>
+	<div class="col-sm-6 callout code">
+<span class="hl"><span class="red">import</span> '../css/style.css';</span>
+<span class="hl"><span class="red">import</span> { svg, stop, gas, dvd, h, w, rand_color } from './base.js';</span>
+var id = null;
+
+//delete children
+var clearing = function() {
+ while (board.hasChildNodes()) {
+        board.removeChild(board.childNodes[0]);
+    }
+}
+
+//stop frames; reset frames
+var stop_it = function() {
+    clearInterval(id);
+}
+
+var grow_n_shrink = function(e) {
+==================CONDENSED=====================
+<h5>Draw.js</h5>
+	</div>
+	</div>
+
+
+
+
+
+	  <br><br>
+	<li class="quote">CRAFTING INSTRUCTIONS</li>
 
 <!-- ROW ONE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 	
-	<p>To show Webpack the connections in our dependency graph, we should add 'import' and 'export' accordingly.</p>
-	<p>Insert green code</p>
-	<p>We can now make a <span class="b">config file</span>, which is a file that Webpack reads in order to create our custom package. It is where we will define the four core concepts: entry, output, modules/loaders, plugins. Here is the structure for our particular project.</p>
-	<p>Insert green code for config file </p>
-	<p>This states that we would like to enter at DRAW.JS, and export our bundle at 'dist/bundle.js'. It also adds on modules and loaders for our css, and a plugin to minify the final code in bundle.js.</p>
+	<p>We can now make a <span class="b">config file</span> at the root of our repository, which is a file that Webpack reads in order to create our custom package. It is where we will define the four core concepts: entry, output, modules/loaders, plugins. Here is the structure for our particular project.</p>
+	<div class="row">
+	  <div class="col-sm-6 callout code">
+var path = require('path');
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
+module.exports = {
+    <span class="hl">entry:</span> './src/js/draw.js',
+    <span class="hl">output:</span> {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js'
+    },
+    <span class="hl">module:</span> {
+        rules: [
+            {
+                test:/\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+           }
+        ]
+    },
+    <span class="hl">plugins:</span> [
+        new UglifyJsPlugin()
+    ]
+};	    
+<h5>webpack.config.js</h5>
+	  </div>
+	  <div class="col-sm-6">
+
+	    <p> The modules, loaders, and plugins that you see here are pre-installed using npm.</p>
+	    <p>This states that we would like to enter at DRAW.JS, and export our bundle at 'dist/' (this will be created if not already existent) and name it "bundle.js". It also adds on the necessary modules and loaders for our css. The "rules" list should be approached like a cond statement to filter through the different components in your bundle that are not JS. Here, we have a rule for "css" files, which we imported earlier on. Lastly, we have a plugin to minify the final code in bundle.js.</p>
+	    <p>As you can see, this is done with the use of JS objects and and lists.</p>
+	    
+	  </div>
+	</div>
+	<br>
+	<p><span class="b red">TIP:</span><span class="i"> Don't forget to note that the path in entry is relative to the root of the directory by adding the './' in the beginning of your path. The path.resolve() used in the output is used to create an absolute path that is not relative.</span></p>
 
 
-
+	  <br>	  <br>
+	<li class="quote">COUNTING DOWN TO LIFT OFF</li>
 
 <!-- ROW ONE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 	<p>Now we can run Webpack using a quick script that we can write in package.json, which was created when we initialized the repo with npm. The <span class="hl">-p</span> stands for production.</p>
@@ -212,7 +338,7 @@ Entrypoint main = bundle.js
 
 
 	
-
+	  <br>	  <br>	<li class="quote">SUCCESS!</li>
 
 <!-- ROW ONE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
@@ -220,11 +346,11 @@ Entrypoint main = bundle.js
 	<div class="row">
 	  <div class="col-sm-3 yellow code">
 curr_dir
- |
+ |-- <span class="hl">webpack.config.js</span>
+ |-- package.json
  |--dist
  |  |-- base.html
  |  `-- <span class="hl">bundle.js</span>
- |
  `--src
     |-- css
     |   `-- style.css
@@ -250,10 +376,48 @@ curr_dir
     
 <h5>base.html</h5>
 	  </div>
-	</div>
+</div>
+<br><br>
+</ol>
+</div>
+<br><br>
+
+
+
+
+
+<!--SECTION FOUR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->            
+<div class="sec">
+  <h4>The Good and The Bad</h4>
+  <br>
+  <p>To consider, before using:</p>
+  <div class="row">
+    <div class="col-sm-4 col-md-offset-2">
+      <div class="procon">
+	<h5>Pros</h5>
+	<ul>
+	  <li>Simplifies linking dependencies</li>
+	  <li>Inject CSS into your JS</li>
+	  <li>Different plugins to choose from</li>
+	</ul>
       </div>
-      <h4>Pros and Cons</h4>
     </div>
-  </body>
-  <script src="index.js" type='text/javascript'></script>
+    <div class="col-sm-4 ">
+      <div class="procon">
+	<h5>Cons</h5>
+	<ul>
+	  <li>Steep learning curve</li>
+	  <li>Updates very frequently</li>
+	  <li>Difficult to configure</li>
+	</ul>
+	<br><br><br>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br><br><br><br>
+</div>
+<div class="text-center">Kristin Lin 2018</div>
+<br><br>
+</body>
 </html>
