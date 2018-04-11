@@ -63,6 +63,7 @@ li {
 .table {
     border: 3px inset red;
     background-color: white;
+    height: 230px;
 }
 
 .procon {
@@ -71,6 +72,7 @@ li {
     border-bottom-style: solid;
     border-color: red;
     background-color: white;
+    height: 250px;
 }
 
 .callout {
