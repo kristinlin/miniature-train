@@ -8,14 +8,29 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <div class="container">
-      <h1>Webpack</h1>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+	<ul class="nav navbar-nav">
+	  <li><a href="#top">
+	      <span class="title">WEBPACK</span>
+	  </a></li>
+	  <li><a href="#what">What Is It</a></li>
+	  <li><a href="#core">Four Core Concepts</a></li>
+	  <li><a href="#ex">An Example</a></li>
+	  <li><a href="#gab">The Good and The Bad</a></li>
+	</ul>
+      </div>
+    </nav>
+
+    <br><br><br><br>
+    <div class="container" id="top">
+      <h1 class="title">Webpack</h1>
       <div class="i text-center">by Kristin Lin SoftDev pd08</div>
       <br><br>
 
 
 <!--SECTION ONE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
-      <div class="sec">
+      <div class="sec" id="what">
 	<h4>What is it?</h4>
 	<br>
 	<div class="row">
@@ -52,7 +67,7 @@
 
 
 <!--SECTION TWO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->      
-      <div class="sec">
+      <div class="sec" id="core">
 	<h4>The Four Core Concepts</h4>
 	<br>
 	<p>While only the entry and the output is necessary for a Webpack bundle, here are the four core concepts to creating one:</p>
@@ -72,7 +87,7 @@
 	  <div class="col-sm-3">
 	    <div class="table">
 	      <h5>modules/loaders</h5>
-	      <p>Webpack needs modules and/or loaders when bundling non-JS files (ie. css).</p>
+	      <p>Webpack needs modules and/or loaders when bundling non-JS files (ie. CSS).</p>
 	    </div>
 	  </div>
 	  <div class="col-sm-3">
@@ -89,7 +104,7 @@
 
 
 <!--SECTION THREE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->            
-      <div class="sec">
+      <div class="sec" id="ex">
 	<h4>An Example</h4>
 	<ol start="0">
 	  <br>	  <br>
@@ -196,7 +211,7 @@ var grow_n_shrink = function(e) {
 <br><br>	
 	  <li class="quote">DRAWING CONNECTIONS</li>
 	<p>To show Webpack the connections in our dependency graph, we should add 'import' and 'export' accordingly.</p>
-	<p>It would also be extremely convenient to include css into our bundle as well! This will save us from linking it later on in the html file, allowing us to just add the bundled JS file that Webpack will create.</p>
+	<p>It would also be extremely convenient to include CSS into our bundle as well! This will save us from linking it later on in the HTML file, allowing us to just add the bundled JS file that Webpack will create.</p>
 	<div class="row">
 	<div class="col-sm-6 callout code">
 <span class="hl"><span class="red">export</span> var svg</span>= document.getElementById("board");
@@ -251,7 +266,7 @@ var grow_n_shrink = function(e) {
 
 <!-- ROW ONE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 	
-	<p>We can now make a <span class="b">config file</span> at the root of our repository, which is a file that Webpack reads in order to create our custom package. It is where we will define the four core concepts: entry, output, modules/loaders, plugins. Here is the structure for our particular project.</p>
+	<p>We can now make a <span class="b">config file</span> at the root of our repository, which is a file that Webpack reads in order to create our custom package. It is where we will define the four core concepts: entry, output, modules/loaders, plugins. Here is the structure for our particular project. It uses JS objects and lists.</p>
 	<div class="row">
 	  <div class="col-sm-6 callout code">
 var path = require('path');
@@ -283,9 +298,9 @@ module.exports = {
 	  <div class="col-sm-6">
 
 	    <p> The modules, loaders, and plugins that you see here are pre-installed using npm.</p>
-	    <p>This states that we would like to enter at DRAW.JS, and export our bundle at 'dist/' (this will be created if not already existent) and name it "bundle.js". It also adds on the necessary modules and loaders for our css. The "rules" list should be approached like a cond statement to filter through the different components in your bundle that are not JS. Here, we have a rule for "css" files, which we imported earlier on. Lastly, we have a plugin to minify the final code in bundle.js.</p>
-	    <p>As you can see, this is done with the use of JS objects and and lists.</p>
-	    
+	    <p>This states that we would like to <span class="b">enter at DRAW.JS</span>, and <span class="b">export our bundle at 'dist/'</span> (this will be created if not already existent) and name it BUNDLE.JS.</p>
+	    <p>It also adds on the necessary modules and loaders for our CSS. The <span class="red">"rules" list should be approached like a cond statement</span> to filter through the different components in your bundle that are not JS. Here, we have a rule for CSS files, which we imported earlier on.</p>
+	      <p>Lastly, we have a plugin to minify the final code in BUNDLE.JS.</p>
 	  </div>
 	</div>
 	<br>
@@ -296,7 +311,7 @@ module.exports = {
 	<li class="quote">COUNTING DOWN TO LIFT OFF</li>
 
 <!-- ROW ONE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-	<p>Now we can run Webpack using a quick script that we can write in package.json, which was created when we initialized the repo with npm. The <span class="hl">-p</span> stands for production.</p>
+	<p>Now we can run Webpack using a quick script that we can write in PACKAGE.JSON, which was created when we initialized the repo with npm. The <span class="hl">-p</span> stands for production.</p>
 <div class="row">
 	  <div class="col-sm-6 callout code">
 "name": "jubilant-lamp",
@@ -342,7 +357,7 @@ Entrypoint main = bundle.js
 
 <!-- ROW ONE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-	<p>Great! your directory should have seen the addition of a bundle.js file. But before we can finish, we must change our BASE.HTML file.</p>
+	<p>Great! your directory should have seen the addition of a BUNDLE.JS file. But before we can finish, we must change our BASE.HTML file.</p>
 	<div class="row">
 	  <div class="col-sm-3 yellow code">
 curr_dir
@@ -377,6 +392,14 @@ curr_dir
 <h5>base.html</h5>
 	  </div>
 </div>
+<br>
+<p>If you're curious as to whether or not our plugin worked, here is a look inside bundle.js...revealing an extremely dense line of code.</p>
+<div class="row">
+  <div class="callout code">
+!function(t){var e={};function n(r){if(e[r])return e[r].exports;var o=e[r]={i:r,l:!1,exports:{}};return t[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=t,n.c=e,n.d=function(t,e,r){n.o(t,e)||Object.defineProperty(t,e,{configurable:!1,enumerable:!0,get:r})},n.r=function(t){Object.defineProperty(t,"__esModule",{value:!0})},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=0)}([function(t,e,n){"use strict";n.r(e),n(5);var r=document.getElementById("board"),o=document.getElementById("stop"),i=document.getElementById("gas"),a=document.getElementById("dvd"),s=r.getAttrib
+                                          ==================CONDENSED=====================
+    <h5>bundle.js</h5></div>
+</div>
 <br><br>
 </ol>
 </div>
@@ -387,7 +410,7 @@ curr_dir
 
 
 <!--SECTION FOUR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->            
-<div class="sec">
+<div class="sec" id="gab">
   <h4>The Good and The Bad</h4>
   <br>
   <p>To consider, before using:</p>

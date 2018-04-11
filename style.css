@@ -1,11 +1,14 @@
 h1 {
     text-align: center;
     padding: 20px;
-    color: #E21A00;
-    font-family: "Bungee Inline", serif;
     font-size: 100px;
     text-transform: lowercase;
     letter-spacing: 25px;
+}
+
+.title {
+    color: #E21A00;
+    font-family: "Bungee Inline", serif;
 }
 
 h4 {
