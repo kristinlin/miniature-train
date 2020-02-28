@@ -1,2 +1,2 @@
 # miniature-train
-Project 00: Webpack
+Project 00: Webpack Presentation
